@@ -1,0 +1,22 @@
+<h1>My Dogs</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Breed</th>
+      <th>Age</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @dogs.each do |dog| %>
+      <tr>
+        <td><%= dog.id %></td>
+        <td><%= dog.name %></td>
+        <td><%= dog.breed %></td>
+        <td><%= dog.age %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

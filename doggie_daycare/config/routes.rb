@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :dogs, only: [:index]
+
   get 'pages/index'
 
   # HTTP verb, path => 'controller_name#controller_action'
