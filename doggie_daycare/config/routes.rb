@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :dogs, only: [:index]
+  resources :dogs, only: [:index, :new, :create]
 
   get 'pages/index'
 
