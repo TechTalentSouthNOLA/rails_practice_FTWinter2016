@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   get 'pages/index'
+
+  # HTTP verb, path => 'controller_name#controller_action'
   get '/about' => 'pages#about'
 
   # The priority is based upon order of creation: first created -> highest priority.
