@@ -8,15 +8,12 @@
 </head>
 <body>
 
-  <!-- Navbar -->
-  <%= link_to fa_icon("home", text: "Home"), root_path %>
-  <%= link_to fa_icon("info", text: "About"), about_path %>
-  <%= link_to "Dogs", dogs_path %>
+  <div class="container">
+    <%= render 'layouts/navbar' %>
+    <%= render 'layouts/notices' %>
 
-  <!-- Notices -->
-  <p id="notice"><%= notice %></p>
-
-  <%= yield %>
+    <%= yield %>
+  </div>
 
 </body>
 </html>

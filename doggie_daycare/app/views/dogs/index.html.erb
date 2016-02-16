@@ -1,10 +1,10 @@
 <h1>My Dogs</h1>
 
 <p>
-  <%= link_to "Add a new dog", new_dog_path %>
+  <%= link_to fa_icon('plus', text: "Add a new dog"), new_dog_path, class: "btn btn-default" %>
 </p>
 
-<table border="1px solid black">
+<table class="table table-striped table-hover">
   <thead>
     <tr>
       <th>ID</th>
@@ -23,8 +23,8 @@
         <td><%= dog.breed %></td>
         <td><%= dog.age %></td>
         <td><%= dog.owner %></td>
-        <td><%= link_to "Edit", edit_dog_path(dog) %></td>
-        <td><%= link_to "Delete", dog, method: :delete, data: { confirm: "Are you sure?"} %></td>
+        <td><%= link_to fa_icon('pencil', text: "Edit"), edit_dog_path(dog) %></td>
+        <td><%= link_to fa_icon('trash', text: "Delete"), dog, method: :delete, data: { confirm: "Are you sure?"} %></td>
       </tr>
     <% end %>
   </tbody>

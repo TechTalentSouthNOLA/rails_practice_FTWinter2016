@@ -18,7 +18,7 @@ class DogsController < ApplicationController
     if @dog.save
       redirect_to dogs_url, notice: "Dog saved!"
     else
-      flash.now[:notice] = "Could not save dog. :("
+      flash.now[:alert] = "Could not save dog. :("
       render :new
     end
   end
@@ -34,7 +34,7 @@ class DogsController < ApplicationController
       flash[:notice] = "Dog updated!"
       redirect_to dog_url(@dog)
     else
-      flash.now[:notice] = "Could not update dog :("
+      flash.now[:alert] = "Could not update dog :("
       render :edit
     end
   end
@@ -45,7 +45,7 @@ class DogsController < ApplicationController
     if @dog.destroy
       redirect_to dogs_url, notice: "Successfully deleted!"
     else
-      redirect_to dogs_url, notice: "Could not delete dog."
+      redirect_to dogs_url, alert: "Could not delete dog."
     end
   end
 

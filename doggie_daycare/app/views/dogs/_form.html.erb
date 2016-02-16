@@ -1,15 +1,27 @@
 <%= form_for @dog do |dog_fields| %>
-  <%= dog_fields.label :name %>
-  <%= dog_fields.text_field :name %><br>
+  <div class="form-group">
+    <%= dog_fields.label :name %><br>
+    <%= dog_fields.text_field :name, class: "form-control", placeholder: "Fido" %>
+  </div>
 
-  <%= dog_fields.label :breed %>
-  <%= dog_fields.text_field :breed %><br>
+  <div class="form-group">
+    <%= dog_fields.label :breed %><br>
+    <%= dog_fields.text_field :breed, class: "form-control", placeholder: 'Poodle' %>
+  </div>
 
-  <%= dog_fields.label :age %>
-  <%= dog_fields.number_field :age %><br>
+  <div class="form-group">
+    <%= dog_fields.label :age %><br>
+    <%= dog_fields.number_field :age, class: "form-control", placeholder: 5 %>
+  </div>
 
-  <%= dog_fields.label :owner %>
-  <%= dog_fields.text_field :owner %><br>
+  <div class="form-group">
+    <%= dog_fields.label :owner %><br>
+    <%= dog_fields.text_field :owner, class: "form-control", placeholder: 'Jane Smith' %>
+  </div>
 
-  <%= dog_fields.submit %>
+  <%= dog_fields.submit class: "btn btn-primary btn-block" %>
 <% end %>
+
+<p>
+  <%= link_to 'Cancel', dogs_path %>
+</p>
