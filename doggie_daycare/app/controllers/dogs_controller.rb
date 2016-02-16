@@ -39,6 +39,16 @@ class DogsController < ApplicationController
     end
   end
 
+  def destroy
+    @dog = Dog.find(params[:id])
+
+    if @dog.destroy
+      redirect_to dogs_url, notice: "Successfully deleted!"
+    else
+      redirect_to dogs_url, notice: "Could not delete dog."
+    end
+  end
+
   private
 
   # White-listing only the parameters we allow people to set
