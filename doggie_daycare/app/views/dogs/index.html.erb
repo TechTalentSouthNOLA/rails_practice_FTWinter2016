@@ -11,6 +11,7 @@
       <th>Name</th>
       <th>Breed</th>
       <th>Age</th>
+      <th>Owner</th>
       <th colspan="2">Actions</th>
     </tr>
   </thead>
@@ -21,6 +22,7 @@
         <td><%= link_to dog.name, dog_path(dog) %></td>
         <td><%= dog.breed %></td>
         <td><%= dog.age %></td>
+        <td><%= dog.owner %></td>
         <td><%= link_to "Edit", edit_dog_path(dog) %></td>
         <td><%= link_to "Delete", dog, method: :delete, data: { confirm: "Are you sure?"} %></td>
       </tr>
