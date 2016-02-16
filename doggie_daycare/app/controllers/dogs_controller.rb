@@ -1,4 +1,9 @@
 class DogsController < ApplicationController
+
+  def show
+    @dog = Dog.find(params[:id])
+  end
+
   def index
     @dogs = Dog.all
   end
@@ -19,6 +24,8 @@ class DogsController < ApplicationController
 
   private
 
+  # White-listing only the parameters we allow people to set
+  # Don't trust parameter from the scary internet!
   def dog_params
     params.require(:dog).permit(:name, :breed, :age)
   end

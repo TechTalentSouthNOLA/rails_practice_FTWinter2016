@@ -1,5 +1,9 @@
 <h1>My Dogs</h1>
 
+<p>
+  <%= link_to "Add a new dog", new_dog_path %>
+</p>
+
 <table>
   <thead>
     <tr>
@@ -13,7 +17,7 @@
     <% @dogs.each do |dog| %>
       <tr>
         <td><%= dog.id %></td>
-        <td><%= dog.name %></td>
+        <td><%= link_to dog.name, dog_path(dog) %></td>
         <td><%= dog.breed %></td>
         <td><%= dog.age %></td>
       </tr>
