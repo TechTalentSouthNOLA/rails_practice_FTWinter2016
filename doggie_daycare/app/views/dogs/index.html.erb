@@ -22,7 +22,7 @@
         <td><%= link_to dog.name, dog_path(dog) %></td>
         <td><%= dog.breed %></td>
         <td><%= dog.age %></td>
-        <td><%= dog.owner %></td>
+        <td><%= dog.owner.try(:name) %></td>
         <td><%= link_to fa_icon('pencil', text: "Edit"), edit_dog_path(dog) %></td>
         <td><%= link_to fa_icon('trash', text: "Delete"), dog, method: :delete, data: { confirm: "Are you sure?"} %></td>
       </tr>

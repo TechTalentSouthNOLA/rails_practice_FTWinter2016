@@ -13,7 +13,7 @@
 </p>
 
 <p>
-  <strong>Owner:</strong> <%= @dog.owner %>
+  <strong>Owner:</strong> <%= @dog.owner.try(:name) %>
 </p>
 
 <p>
