@@ -7,7 +7,7 @@
 
 <p>
   <strong>Genre:</strong>
-  <%= @artist.genre %>
+  <%= @artist.genre.try(:name) %>
 </p>
 
 <%= link_to 'Edit', edit_artist_path(@artist) %> |
