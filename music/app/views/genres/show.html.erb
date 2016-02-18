@@ -1,9 +1,28 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @genre.name %>
-</p>
+<h1><%= @genre.name.titleize %> Genre</h1>
+
+<h3>Artists in <%= @genre.name.titleize %></h3>
+
+<ul>
+  <% @genre.artists.each do |artist| %>
+    <li><%= link_to artist.name, artist_path(artist) %></li>
+    <ul>
+      <%# This results in an N+1 query. Look up "eager loading" in Rails for a solution %>
+      <% artist.songs.each do |song| %>
+        <li><%= song.title %></li>
+      <% end %>
+    </ul>
+  <% end %>
+</ul>
+
+<h3>Songs in <%= @genre.name.titleize %></h3>
+
+<ul>
+  <% @genre.songs.each do |song| %>
+    <li><%= link_to song.title, song %></li>
+  <% end %>
+</ul>
 
 <%= link_to 'Edit', edit_genre_path(@genre) %> |
 <%= link_to 'Back', genres_path %>
