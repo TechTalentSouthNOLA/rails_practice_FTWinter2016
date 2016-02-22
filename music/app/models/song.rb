@@ -15,6 +15,13 @@ class Song < ActiveRecord::Base
 
 end
 
+# class Article < ActiveRecord::Base
+#   scope :published, -> { where(published: true)}
+
+#   # Somewhere else, I could use:
+#   @published_articles = Article.published
+# end
+
 # == Schema Information
 #
 # Table name: songs
